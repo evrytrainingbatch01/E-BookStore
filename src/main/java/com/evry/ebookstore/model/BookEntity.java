@@ -71,7 +71,6 @@ public class BookEntity {
 		this.price = price;
 	}
 
-
 	public String getBookTitle() {
 		return bookTitle;
 	}
