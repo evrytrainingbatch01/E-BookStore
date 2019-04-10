@@ -1,5 +1,5 @@
 package com.evry.ebookstore.dao;
 
-public class BookDAO {
+public interface BookDAO {
 
 }
