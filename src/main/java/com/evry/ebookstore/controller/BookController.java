@@ -1,6 +1,7 @@
 package com.evry.ebookstore.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,6 +27,7 @@ public class BookController {
 
 	/**
 	 * This method is used for get all the books info.
+	 * 
 	 * @return List<BookEntity>
 	 */
 	@GetMapping("/books")
@@ -35,11 +37,12 @@ public class BookController {
 
 	/**
 	 * This method get the array of books and return total prise of the books.
-	 * @param books List<BookEntity>.
+	 * 
+	 * @param books List<Map<String, BookEntity>>.
 	 * @return price double.
 	 */
 	@GetMapping("/books/price")
-	public double buyBooks(@RequestBody final List<BookEntity> books) {
+	public double buyBooks(@RequestBody final List<Map<String, BookEntity>> books) {
 		return bookService.byBooks(books);
 	}
 
