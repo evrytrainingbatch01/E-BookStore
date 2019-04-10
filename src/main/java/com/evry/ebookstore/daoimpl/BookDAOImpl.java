@@ -1,10 +1,36 @@
 package com.evry.ebookstore.daoimpl;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.evry.ebookstore.dao.BookDAO;
+import com.evry.ebookstore.model.BookEntity;
+
+/**
+ * 
+ * @author deepak.ja
+ *
+ */
 
 @Repository
-public class BookDAOImpl implements BookDAO{
+public class BookDAOImpl{
 
+	@Autowired
+	private BookDAO bookDAO;
+	
+	// get all books
+	public List<BookEntity> getAllBooks(){
+		List<BookEntity> allBooks = bookDAO.findAll();
+		return allBooks;
+	}
+	
+	//I get book by id
+	public Optional<BookEntity> getBookById(long id) {
+		Optional<BookEntity> book = bookDAO.findById(id);
+		return book;
+	}
+	
 }
