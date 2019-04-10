@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,12 +40,13 @@ public class BookControllerImpl implements BookController{
 	/**
 	 * This method get the array of books and return total prise of the books.
 	 * 
-	 * @param books List<Map<String, BookEntity>>.
+	 * @param books List<BookEntity>.
+	 * @param quantity
 	 * @return price double.
 	 */
-	@GetMapping("/books/price")
-	public double buyBooks(@RequestBody final List<Map<String, BookEntity>> books) {
-		return bookService.buyBooks(books);
+	@GetMapping("/books/price/{quantity}")
+	public double buyBooks(@RequestBody final List<BookEntity> books, final @PathVariable("quantity") int quantity) {
+		return bookService.buyBooks(books, quantity);
 	}
 
 }
