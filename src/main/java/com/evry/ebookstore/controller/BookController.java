@@ -38,7 +38,7 @@ public class BookController {
 	/**
 	 * This method get the array of books and return total prise of the books.
 	 * 
-	 * @param books List<BookEntity>.
+	 * @param books List<Map<String, BookEntity>>.
 	 * @return price double.
 	 */
 	@GetMapping("/books/price")
