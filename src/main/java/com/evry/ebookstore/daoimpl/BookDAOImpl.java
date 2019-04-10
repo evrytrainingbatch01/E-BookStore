@@ -27,9 +27,9 @@ public class BookDAOImpl{
 		return allBooks;
 	}
 	
-	//I get book by id
-	public Optional<BookEntity> getBookById(long id) {
-		Optional<BookEntity> book = bookDAO.findById(id);
+	// get book by id
+	public BookEntity getBookById(long id) {
+		BookEntity book = bookDAO.findById(id).get();
 		return book;
 	}
 	

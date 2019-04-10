@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.evry.ebookstore.dao.BookDAO;
+import com.evry.ebookstore.daoimpl.BookDAOImpl;
 import com.evry.ebookstore.model.BookEntity;
 import com.evry.ebookstore.service.BookService;
 
@@ -28,7 +29,7 @@ public class BookServiceImpl implements BookService {
 	 * annotation
 	 */
 	@Autowired
-	private BookDAO bookDao;
+	private BookDAOImpl bookDao;
 
 	/**
 	 * @getAllBooks() method is used here to get the list of books by calling
@@ -68,7 +69,7 @@ public class BookServiceImpl implements BookService {
  */
 	private BookEntity getAllBookById(long id) {
 
-		return bookDao.getAllBookById(id);
+		return bookDao.getBookById(id);
 	}
 
 }
