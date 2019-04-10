@@ -44,9 +44,9 @@ public class BookServiceImpl implements BookService {
 
 	/**
 	 * @buyBooks method is used here using selectedBooks {@value bookId } to get
-	 *           single bookPrice and multiple with {@value bookQuantity },the total
-	 *           price saved in @return TolalPrice in double by calling buyBooks()
-	 *           of BookDAOImpl class of Dao layer.
+	 *           single bookPrice by calling buyBooks() of BookDAOImpl class of Dao
+	 *           layer and multiple with {@value bookQuantity },the total price
+	 *           saved in @return TolalPrice in double.
 	 * 
 	 */
 
@@ -61,7 +61,11 @@ public class BookServiceImpl implements BookService {
 
 		return TolalPrice;
 	}
-
+/**
+ * This method get the book Object 
+ * @param id
+ * @return BookEntity 
+ */
 	private BookEntity getAllBookById(long id) {
 
 		return bookDao.getAllBookById(id);

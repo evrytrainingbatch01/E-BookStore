@@ -45,8 +45,8 @@ public class BookControllerImpl implements BookController{
 	 * @return price double.
 	 */
 	@GetMapping("/books/price/{quantity}")
-	public double buyBooks(@RequestBody final List<BookEntity> books, final @PathVariable("quantity") int quantity) {
-		return bookService.buyBooks(books, quantity);
+	public double buyBooks(@RequestBody final List<Map<String, Object>> selectedBooks) {
+		return bookService.buyBooks(selectedBooks);
 	}
 
 }
